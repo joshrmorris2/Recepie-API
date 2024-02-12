@@ -37,7 +37,7 @@ DELETE http://localhost:8080/recipes/65c9b6f696fcbb7ae75906d2 HTTP/1.1
 ###
 GET https://recipe-api-ma9i.onrender.com/recipes
 ###
-GET https://recipe-api-ma9i.onrender.com/recipes/65b348b5b8607af3322e32d1
+GET https://recipe-api-ma9i.onrender.com/recipes/65c9b68196fcbb7ae75906d1
 ### create new
 POST https://recipe-api-ma9i.onrender.com/recipes/ HTTP/1.1
 Content-Type: application/json
@@ -52,7 +52,7 @@ Content-Type: application/json
 }
 
 ### update
-PUT https://recipe-api-ma9i.onrender.com/recipes/65b3539cb8607af3322e32d4 HTTP/1.1
+PUT https://recipe-api-ma9i.onrender.com/recipes/65c9bdd178f02fb0500c351a HTTP/1.1
 Content-Type: application/json
 
 {
@@ -65,4 +65,4 @@ Content-Type: application/json
 }
 
 ### Delete Contact
-DELETE https://recipe-api-ma9i.onrender.com/recipes/65bb30be48a341ee5e347bc9 HTTP/1.1
+DELETE https://recipe-api-ma9i.onrender.com/recipes/65c9bdd178f02fb0500c351a HTTP/1.1

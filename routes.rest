@@ -1,0 +1,68 @@
+// Local
+GET http://localhost:8080/recipes
+###
+GET http://localhost:8080/recipes/65c878aae78e5632ba80cd94
+
+### Create Contact
+POST http://localhost:8080/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Pound Cake",
+    "ingredients": "1lb sugar, 1lb butter, 1lb flour, 1 dozen eggs, 1/4 teaspoon salt, 1/4 cup fresh lemon juice, 1 tablespoon fresh lemon rind, grated",
+    "directions": "1. Preheat oven to 325 deg F\\n2. In mixing bowl cream butter and sugar\\n3. Add 1 egg at a time beating after each\\n4. Gradually add sifted flour, 1/2 cup at a time, till all blended\\n5. Add lemon juice and lemon rind, blend\\n6. Pour into a buttered and floured tube pan\\n7. Bake 75 to 90 minutes; Till toothpick in center comes out clean.",
+    "cuisine": "cake",
+    "chef": "John Smith",
+    "creation": "1700s"
+}
+
+### Edit Contact
+PUT http://localhost:8080/recipes/65c9b6f696fcbb7ae75906d2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Pound Cake v2",
+    "ingredients": "1lb sugar, 1lb butter, 1lb flour, 1 dozen eggs, 1/4 teaspoon salt, 1/4 cup fresh lemon juice, 1 tablespoon fresh lemon rind, grated",
+    "directions": "1. Preheat oven to 325 deg F\\n2. In mixing bowl cream butter and sugar\\n3. Add 1 egg at a time beating after each\\n4. Gradually add sifted flour, 1/2 cup at a time, till all blended\\n5. Add lemon juice and lemon rind, blend\\n6. Pour into a buttered and floured tube pan\\n7. Bake 75 to 90 minutes; Till toothpick in center comes out clean.",
+    "cuisine": "cake",
+    "chef": "John Smith",
+    "creation": "1800s"
+}
+
+### Delete Contact
+DELETE http://localhost:8080/recipes/65c9b6f696fcbb7ae75906d2 HTTP/1.1
+
+
+// Render
+###
+GET https://recipe-api-ma9i.onrender.com/recipes
+###
+GET https://recipe-api-ma9i.onrender.com/recipes/65b348b5b8607af3322e32d1
+### create new
+POST https://recipe-api-ma9i.onrender.com/recipes/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Pound Cake",
+    "ingredients": "1lb sugar, 1lb butter, 1lb flour, 1 dozen eggs, 1/4 teaspoon salt, 1/4 cup fresh lemon juice, 1 tablespoon fresh lemon rind, grated",
+    "directions": "1. Preheat oven to 325 deg F\\n2. In mixing bowl cream butter and sugar\\n3. Add 1 egg at a time beating after each\\n4. Gradually add sifted flour, 1/2 cup at a time, till all blended\\n5. Add lemon juice and lemon rind, blend\\n6. Pour into a buttered and floured tube pan\\n7. Bake 75 to 90 minutes; Till toothpick in center comes out clean.",
+    "cuisine": "cake",
+    "chef": "John Smith",
+    "creation": "1700s"
+}
+
+### update
+PUT https://recipe-api-ma9i.onrender.com/recipes/65b3539cb8607af3322e32d4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Pound Cake v2",
+    "ingredients": "1lb sugar, 1lb butter, 1lb flour, 1 dozen eggs, 1/4 teaspoon salt, 1/4 cup fresh lemon juice, 1 tablespoon fresh lemon rind, grated",
+    "directions": "1. Preheat oven to 325 deg F\\n2. In mixing bowl cream butter and sugar\\n3. Add 1 egg at a time beating after each\\n4. Gradually add sifted flour, 1/2 cup at a time, till all blended\\n5. Add lemon juice and lemon rind, blend\\n6. Pour into a buttered and floured tube pan\\n7. Bake 75 to 90 minutes; Till toothpick in center comes out clean.",
+    "cuisine": "cake",
+    "chef": "John Smith",
+    "creation": "1800s"
+}
+
+### Delete Contact
+DELETE https://recipe-api-ma9i.onrender.com/recipes/65bb30be48a341ee5e347bc9 HTTP/1.1

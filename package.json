@@ -20,7 +20,8 @@
     "express": "^4.17.3",
     "mongodb": "^4.4.1",
     "mongodb-connection-string-url": "^3.0.0",
-    "swagger-ui-express": "^4.3.0"
+    "swagger-ui-express": "^4.3.0",
+    "validatorjs": "^3.22.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",

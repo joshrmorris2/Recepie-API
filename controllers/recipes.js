@@ -2,10 +2,17 @@ const { response } = require('express');
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll = async (req, res, next) => {
+const getAll = (req, res) => {
     try {
-        const result = await mongodb.getDb().db().collection('recipes').find();
-        result.toArray().then((lists) => {
+        mongodb
+        .getDb()
+        .db()
+        .collection('contacts')
+        .find()
+        .toArray((err, lists) => {
+            if (err) {
+                res.status(400).json({message: err});
+            }
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(lists);
         });
@@ -14,14 +21,24 @@ const getAll = async (req, res, next) => {
     }
 };
 
-const getSingle = async (req, res, next) => {
+const getSingle = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid recipe id to find a recipe.');
+    }
     try {
         const userId = new ObjectId(req.params.id);
-        const result = await mongodb.getDb().db().collection('recipes').find({_id: userId});
-        result.toArray().then((lists) => {
+        mongodb
+            .getDb()
+            .db()
+            .collection('contacts')
+            .find({ _id: userId })
+            .toArray((err, lists) => {
+            if (err) {
+                res.status(400).json({message:err});
+            }
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(lists[0]);
-        });
+            });
     } catch {
         res.status(500).json({ error: 'Internal Server Error' });
     }
@@ -51,6 +68,9 @@ const create = async (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
+        if (!ObjectId.isValid(req.params.id)) {
+          res.status(400).json('Must use a valid recipe id to update a recipe.');
+        }
         const response = await mongodb.getDb().db().collection('recipes').updateOne(
             { _id: new ObjectId(req.params.id) }, 
             {
@@ -75,6 +95,9 @@ const update = async (req, res, next) => {
 
 const remove = async (req, res, next) => {
     try {
+        if (!ObjectId.isValid(req.params.id)) {
+          res.status(400).json('Must use a valid recipe id to delete a recipe.');
+        }
         const result = await mongodb.getDb().db().collection('recipes').deleteOne(
             { _id: new ObjectId(req.params.id) }, true);
 

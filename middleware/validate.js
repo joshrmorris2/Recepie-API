@@ -7,7 +7,7 @@ const saveRecipe = (req, res, next) => {
         directions: 'required|string',
         cuisine: 'string',
         chef: 'string',
-        creation: 'string',
+        creation: 'string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
@@ -24,4 +24,4 @@ const saveRecipe = (req, res, next) => {
 
 module.exports = {
     saveRecipe
-}
+};

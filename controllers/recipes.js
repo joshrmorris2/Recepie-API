@@ -3,7 +3,6 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = (req, res) => {
-    console.log('1');
     mongodb
         .getDb()
         .db()
@@ -11,10 +10,8 @@ const getAll = (req, res) => {
         .find()
         .toArray((err, lists) => {
             if (err) {
-                console.log('2');
                 res.status(400).json({ message: err });
             }
-            console.log(lists);
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(lists);
     });

@@ -1,4 +1,6 @@
 // Local
+
+// recipes
 GET http://localhost:8080/recipes
 ###
 GET http://localhost:8080/recipes/65c878aae78e5632ba80cd94
@@ -31,6 +33,41 @@ Content-Type: application/json
 
 ### Delete Contact
 DELETE http://localhost:8080/recipes/65c9b6f696fcbb7ae75906d2 HTTP/1.1
+
+// Chefs
+###
+GET http://localhost:8080/chefs
+###
+GET http://localhost:8080/chefs/65d98d29814c1e602ce61d7a
+
+### Create Contact
+POST http://localhost:8080/chefs HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Eric",
+    "lastName": "Martinez",
+    "cuisine": "Mexican",
+    "email": "test@chefs.com",
+    "phone": "1234567890",
+    "forHire": "true"
+}
+
+### Edit Contact
+PUT http://localhost:8080/chefs/65c9b6f696fcbb7ae75906d2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Eric",
+    "lastName": "Martinez",
+    "cuisine": "Mexican",
+    "email": "test@chefs.com",
+    "phone": "1234567890",
+    "forHire": "true"
+}
+
+### Delete Contact
+DELETE http://localhost:8080/chefs/65d98d29814c1e602ce61d7a HTTP/1.1
 
 
 // Render

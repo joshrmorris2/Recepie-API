@@ -36,7 +36,7 @@ const getSingle = async (req, res) => {
     });
 };
 
-const createRecipe = async (req, res, next) => {
+const create = async (req, res, next) => {
     const recipe = {
         title: req.body.title,
         ingredients: req.body.ingredients,
@@ -54,7 +54,7 @@ const createRecipe = async (req, res, next) => {
     }
 };
 
-const updateRecipe = async (req, res, next) => {
+const update = async (req, res, next) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid recipe id to update a recipe.');
     }
@@ -77,7 +77,7 @@ const updateRecipe = async (req, res, next) => {
         }
 };
 
-const deleteRecipe = async (req, res, next) => {
+const remove = async (req, res, next) => {
     if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid recipe id to delete a recipe.');
     }
@@ -95,7 +95,7 @@ const deleteRecipe = async (req, res, next) => {
 module.exports = {
     getAll,
     getSingle,
-    createRecipe,
-    updateRecipe,
-    deleteRecipe
+    create,
+    update,
+    remove
 };

@@ -19,7 +19,7 @@ const getAll = (req, res) => {
 
 const getSingle = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid recipe id to find a recipe.');
+      res.status(400).json('Must use a valid chef id to find a chef.');
     }
     const userId = new ObjectId(req.params.id);
     mongodb
@@ -36,8 +36,8 @@ const getSingle = async (req, res) => {
     });
 };
 
-const createRecipe = async (req, res, next) => {
-    const recipe = {
+const create = async (req, res, next) => {
+    const chef = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         cuisine: req.body.cuisine,
@@ -45,7 +45,7 @@ const createRecipe = async (req, res, next) => {
         phone: req.body.phone,
         forHire: req.body.forHire,
     };
-    const response = await mongodb.getDb().db().collection('chefs').insertOne(recipe);
+    const response = await mongodb.getDb().db().collection('chefs').insertOne(chef);
     if (response.acknowledged) {
         res.status(201).json(response);
     } else {
@@ -54,9 +54,9 @@ const createRecipe = async (req, res, next) => {
     }
 };
 
-const updateRecipe = async (req, res, next) => {
+const update = async (req, res, next) => {
     if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json('Must use a valid recipe id to update a recipe.');
+        res.status(400).json('Must use a valid chef id to update a chef.');
     }
     const response = await mongodb.getDb().db().collection('chefs').updateOne(
         { _id: new ObjectId(req.params.id) }, 
@@ -77,9 +77,9 @@ const updateRecipe = async (req, res, next) => {
         }
 };
 
-const deleteRecipe = async (req, res, next) => {
+const remove = async (req, res, next) => {
     if (!ObjectId.isValid(req.params.id)) {
-        res.status(400).json('Must use a valid recipe id to delete a recipe.');
+        res.status(400).json('Must use a valid chef id to delete a chef.');
     }
     const result = await mongodb.getDb().db().collection('chefs').deleteOne(
         { _id: new ObjectId(req.params.id) }, true);
@@ -95,7 +95,7 @@ const deleteRecipe = async (req, res, next) => {
 module.exports = {
     getAll,
     getSingle,
-    createRecipe,
-    updateRecipe,
-    deleteRecipe
+    create,
+    update,
+    remove
 };

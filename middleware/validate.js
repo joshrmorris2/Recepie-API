@@ -22,6 +22,29 @@ const saveRecipe = (req, res, next) => {
     });
 };
 
+const saveChef = (req, res, next) => {
+    const validationRule = {
+        firstName: 'required|string',
+        lastName: 'required|string',
+        cuisine: 'string',
+        email: 'email',
+        phone: 'email',
+        forHire: 'bool',
+    };
+    validator(req.body, validationRule, {}, (err, status) => {
+        if (!status) {
+            res.status(412).send({
+                success: false,
+                message: 'Validation failed',
+                data: err
+            });
+        } else {
+            next();
+        }
+    });
+};
+
 module.exports = {
-    saveRecipe
+    saveRecipe,
+    saveChef
 };

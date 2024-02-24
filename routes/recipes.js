@@ -1,12 +1,12 @@
 const routes = require('express').Router();
-const contactController = require('../controllers/recipes');
+const recipeController = require('../controllers/recipes');
 const validation = require('../middleware/validate')
 
 
-routes.get('/', contactController.getAll);
-routes.get('/:id', contactController.getSingle);
-routes.post('/', validation.saveRecipe, contactController.create);
-routes.put('/:id', validation.saveRecipe, contactController.update);
-routes.delete('/:id', contactController.remove);
+routes.get('/', recipeController.getAll);
+routes.get('/:id', recipeController.getSingle);
+routes.post('/', validation.saveRecipe, recipeController.create);
+routes.put('/:id', validation.saveRecipe, recipeController.update);
+routes.delete('/:id', recipeController.remove);
 
 module.exports = routes;

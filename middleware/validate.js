@@ -27,9 +27,9 @@ const saveChef = (req, res, next) => {
         firstName: 'required|string',
         lastName: 'required|string',
         cuisine: 'string',
-        email: 'email',
-        phone: 'required_if:forHire, integer',
         forHire: 'boolean',
+        email: 'email',
+        phone: 'required_if:forHire:true, integer',
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {

@@ -41,9 +41,9 @@ const create = async (req, res, next) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         cuisine: req.body.cuisine,
+        forHire: req.body.forHire,
         email: req.body.email,
         phone: req.body.phone,
-        forHire: req.body.forHire,
     };
     const response = await mongodb.getDb().db().collection('chefs').insertOne(chef);
     if (response.acknowledged) {
@@ -65,9 +65,9 @@ const update = async (req, res, next) => {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 cuisine: req.body.cuisine,
+                forHire: req.body.forHire,
                 email: req.body.email,
                 phone: req.body.phone,
-                forHire: req.body.forHire,
             },
         });
         if(response.modifiedCount > 0) {

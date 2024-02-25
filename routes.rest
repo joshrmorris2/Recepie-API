@@ -48,9 +48,8 @@ Content-Type: application/json
     "firstName": "Eric",
     "lastName": "Martinez",
     "cuisine": "Mexican",
-    "forHire": "false",
-    "email": "test@chefs.com",
-    "phone": "1234567890"
+    "forHire": "true",
+    "email": "test@chefs.com"
 }
 
 ### Edit
@@ -105,10 +104,10 @@ Content-Type: application/json
 DELETE https://recipe-api-ma9i.onrender.com/recipes/65c9bdd178f02fb0500c351a HTTP/1.1
 
 // Chefs
-###
+### 
 GET https://recipe-api-ma9i.onrender.com/chefs
 ###
-GET https://recipe-api-ma9i.onrender.com/chefs/65dadeea8c7885e8bf520463
+GET https://recipe-api-ma9i.onrender.com/chefs/65dae1a8f7762014626f0d1a
 
 ### Create
 POST https://recipe-api-ma9i.onrender.com/chefs HTTP/1.1
@@ -118,9 +117,8 @@ Content-Type: application/json
     "firstName": "Eric",
     "lastName": "Martinez",
     "cuisine": "Mexican",
-    "forHire": "false",
-    "email": "test@chefs.com",
-    "phone": "1234567890"
+    "forHire": "true",
+    "email": "test@chefs.com"
 }
 
 ### Edit
@@ -137,4 +135,4 @@ Content-Type: application/json
 }
 
 ### Delete
-DELETE https://recipe-api-ma9i.onrender.com/chefs/65d98d29814c1e602ce61d7a HTTP/1.1
+DELETE https://recipe-api-ma9i.onrender.com/chefs/65dae0bc8c7885e8bf520465 HTTP/1.1

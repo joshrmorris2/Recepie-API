@@ -5,7 +5,7 @@ GET http://localhost:8080/recipes
 ###
 GET http://localhost:8080/recipes/65c878aae78e5632ba80cd94
 
-### Create Contact
+### Create
 POST http://localhost:8080/recipes HTTP/1.1
 Content-Type: application/json
 
@@ -18,7 +18,7 @@ Content-Type: application/json
     "creation": "1700s"
 }
 
-### Edit Contact
+### Edit
 PUT http://localhost:8080/recipes/65c9b6f696fcbb7ae75906d2 HTTP/1.1
 Content-Type: application/json
 
@@ -31,7 +31,7 @@ Content-Type: application/json
     "creation": "1800s"
 }
 
-### Delete Contact
+### Delete
 DELETE http://localhost:8080/recipes/65c9b6f696fcbb7ae75906d2 HTTP/1.1
 
 // Chefs
@@ -40,7 +40,7 @@ GET http://localhost:8080/chefs
 ###
 GET http://localhost:8080/chefs/65d98d29814c1e602ce61d7a
 
-### Create Contact
+### Create
 POST http://localhost:8080/chefs HTTP/1.1
 Content-Type: application/json
 
@@ -53,7 +53,7 @@ Content-Type: application/json
     "forHire": "true"
 }
 
-### Edit Contact
+### Edit
 PUT http://localhost:8080/chefs/65c9b6f696fcbb7ae75906d2 HTTP/1.1
 Content-Type: application/json
 
@@ -66,7 +66,7 @@ Content-Type: application/json
     "forHire": "true"
 }
 
-### Delete Contact
+### Delete
 DELETE http://localhost:8080/chefs/65d98d29814c1e602ce61d7a HTTP/1.1
 
 
@@ -103,3 +103,38 @@ Content-Type: application/json
 
 ### Delete Contact
 DELETE https://recipe-api-ma9i.onrender.com/recipes/65c9bdd178f02fb0500c351a HTTP/1.1
+
+// Chefs
+###
+GET https://recipe-api-ma9i.onrender.com/
+###
+GET https://recipe-api-ma9i.onrender.com//65d98d29814c1e602ce61d7a
+
+### Create
+POST https://recipe-api-ma9i.onrender.com/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Eric",
+    "lastName": "Martinez",
+    "cuisine": "Mexican",
+    "email": "test@chefs.com",
+    "phone": "1234567890",
+    "forHire": "true"
+}
+
+### Edit
+PUT https://recipe-api-ma9i.onrender.com//65c9b6f696fcbb7ae75906d2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Eric",
+    "lastName": "Martinez",
+    "cuisine": "Mexican",
+    "email": "test@chefs.com",
+    "phone": "1234567890",
+    "forHire": "true"
+}
+
+### Delete
+DELETE https://recipe-api-ma9i.onrender.com//65d98d29814c1e602ce61d7a HTTP/1.1

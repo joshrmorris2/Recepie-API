@@ -106,12 +106,12 @@ DELETE https://recipe-api-ma9i.onrender.com/recipes/65c9bdd178f02fb0500c351a HTT
 
 // Chefs
 ###
-GET https://recipe-api-ma9i.onrender.com/
+GET https://recipe-api-ma9i.onrender.com/chefs
 ###
-GET https://recipe-api-ma9i.onrender.com//65d98d29814c1e602ce61d7a
+GET https://recipe-api-ma9i.onrender.com/chefs/65d98d29814c1e602ce61d7a
 
 ### Create
-POST https://recipe-api-ma9i.onrender.com/ HTTP/1.1
+POST https://recipe-api-ma9i.onrender.com/chefs HTTP/1.1
 Content-Type: application/json
 
 {
@@ -124,7 +124,7 @@ Content-Type: application/json
 }
 
 ### Edit
-PUT https://recipe-api-ma9i.onrender.com//65c9b6f696fcbb7ae75906d2 HTTP/1.1
+PUT https://recipe-api-ma9i.onrender.com/chefs/65c9b6f696fcbb7ae75906d2 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -137,4 +137,4 @@ Content-Type: application/json
 }
 
 ### Delete
-DELETE https://recipe-api-ma9i.onrender.com//65d98d29814c1e602ce61d7a HTTP/1.1
+DELETE https://recipe-api-ma9i.onrender.com/chefs/65d98d29814c1e602ce61d7a HTTP/1.1

@@ -25,4 +25,4 @@ router.get('/auth/google/callback',
   }
 );
 
-module.exports = router;
+module.exports = { router, isAuthenticated };

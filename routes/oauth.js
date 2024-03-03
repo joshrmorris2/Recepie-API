@@ -1,5 +1,5 @@
 const express = require('express');
-const passport = require('./auth'); // Import the authentication logic
+const passport = require('../middleware/oauth'); // Import the authentication logic
 
 const router = express.Router();
 

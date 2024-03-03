@@ -10,7 +10,6 @@ const app = express();
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-const { isAuthenticated } = require('./routes/oauth');
 
 app.use(session({
   secret: process.env.SECRET_KEY,

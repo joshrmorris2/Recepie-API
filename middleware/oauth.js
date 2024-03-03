@@ -4,7 +4,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'https://recipe-api-ma9i.onrender.com/',
+    callbackURL: 'https://recipe-api-ma9i.onrender.com/auth/google/callback',
   },
   (accessToken, refreshToken, profile, done) => {
     // Store user information or perform custom logic here

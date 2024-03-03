@@ -107,7 +107,7 @@ DELETE https://recipe-api-ma9i.onrender.com/recipes/65c9bdd178f02fb0500c351a HTT
 ### 
 GET https://recipe-api-ma9i.onrender.com/chefs
 ###
-GET https://recipe-api-ma9i.onrender.com/chefs/65dae1a8f7762014626f0d1a
+GET https://recipe-api-ma9i.onrender.com/chefs/65dae335454cb033a9dd066d
 
 ### Create
 POST https://recipe-api-ma9i.onrender.com/chefs HTTP/1.1
@@ -117,12 +117,11 @@ Content-Type: application/json
     "firstName": "Eric",
     "lastName": "Martinez",
     "cuisine": "Mexican",
-    "forHire": "true",
-    "email": "test@chefs.com"
+    "forHire": "true"
 }
 
 ### Edit
-PUT https://recipe-api-ma9i.onrender.com/chefs/65c9b6f696fcbb7ae75906d2 HTTP/1.1
+PUT https://recipe-api-ma9i.onrender.com/chefs/65dae335454cb033a9dd066d HTTP/1.1
 Content-Type: application/json
 
 {
@@ -135,4 +134,4 @@ Content-Type: application/json
 }
 
 ### Delete
-DELETE https://recipe-api-ma9i.onrender.com/chefs/65dae0bc8c7885e8bf520465 HTTP/1.1
+DELETE https://recipe-api-ma9i.onrender.com/chefs/65dae335454cb033a9dd066d HTTP/1.1

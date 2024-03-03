@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const isAuthenticated = require('./oauth').isAuthenticated;
+const { isAuthenticated } = require('./oauth').isAuthenticated;
 
 router.use('/auth', isAuthenticated);
 router.use('/recipes', require('./recipes'));

@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongodb = require('./db/connect');
 const passport = require('./middleware/oauth');
-const isAuthenticated = require('./routes/oauth');
+const { isAuthenticated } = require('./routes/oauth');
 
 const port = process.env.PORT || 8080;
 const app = express();

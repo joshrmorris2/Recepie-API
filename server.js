@@ -23,7 +23,7 @@ app
     next();
   })
   .use(passport.initialize())
-  app.use(passport.session())
+  .use(passport.session())
   .use('/', require('./routes'));
 
 process.on('uncaughtException', (err, origin) => {

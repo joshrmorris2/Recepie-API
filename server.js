@@ -3,12 +3,14 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongodb = require('./db/connect');
 const passport = require('./middleware/oauth');
+const isAuthenticated = require('./routes/oauth');
 
 const port = process.env.PORT || 8080;
 const app = express();
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const { isAuthenticated } = require('./routes/oauth');
 
 app.use(session({
   secret: process.env.SECRET_KEY,
@@ -31,7 +33,7 @@ app
   })
   .use(passport.initialize())
   .use(passport.session())
-  .use('/', require('./routes'));
+  .use('/', isAuthenticated, require('./routes'));
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);

@@ -22,4 +22,13 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
+// Middleware to check if the user is authenticated
+passport.isAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  // Redirect to login or handle unauthorized access as needed
+  res.redirect('/auth/google');
+};
+
 module.exports = passport;

@@ -18,4 +18,4 @@ router.get('/google/callback', (req, res, next) => {
   }
 });
 
-module.exports = { router, isAuthenticated };
+module.exports = router;

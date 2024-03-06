@@ -30,9 +30,8 @@ app
     next();
   })
   .use(passport.initialize())
-  .use(passport.session());
-
-app.use('/', passport.isAuthenticated, require('./routes'));
+  .use(passport.session())
+  .use('/', passport.isAuthenticated(), require('./routes'));
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);

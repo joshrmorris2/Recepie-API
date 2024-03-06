@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('../middleware/oauth'); // Import the authentication logic
 
 const router = express.Router();
-  
+
 // Authentication routes
 router.get('/google', (req, res, next) => {
   console.log('Entering /auth/google route');

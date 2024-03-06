@@ -3,9 +3,9 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const credentials = require('./credentials.json');
 
 passport.use(new GoogleStrategy({
-    clientID: credentials.client_id,
+    clientID: credentials.web.client_id,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: credentials.redirect_uris,
+    callbackURL: credentials.web.redirect_uris[0],
   },
   (accessToken, refreshToken, profile, done) => {
     // Store user information or perform custom logic here

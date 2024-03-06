@@ -9,7 +9,6 @@ passport.use(new GoogleStrategy({
   },
   (accessToken, refreshToken, profile, done) => {
     // Store user information or perform custom logic here
-    console.log(profile, accessToken, refreshToken, done)
     return done(null, profile);
   }
 ));
@@ -26,6 +25,7 @@ passport.deserializeUser((obj, done) => {
 
 // Middleware to check if the user is authenticated
 passport.isAuthenticated = (req, res, next) => {
+  console.log('in isAuthenticated')
   if (req.isAuthenticated()) {
     return next();
   }

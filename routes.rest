@@ -71,6 +71,8 @@ DELETE http://localhost:8080/chefs/65d98d29814c1e602ce61d7a HTTP/1.1
 
 // Render
 ###
+GET https://recipe-api-ma9i.onrender.com/
+###
 GET https://recipe-api-ma9i.onrender.com/recipes
 ###
 GET https://recipe-api-ma9i.onrender.com/recipes/65c9b68196fcbb7ae75906d1

@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongodb = require('./db/connect');
 const passport = require('./middleware/oauth');
-const { isAuthenticated } = passport.isAuthenticated
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -32,7 +31,7 @@ app
   })
   .use(passport.initialize())
   .use(passport.session())
-  .use('/', isAuthenticated, require('./routes'));
+  .use('/', passport.isAuthenticated, require('./routes'));
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);

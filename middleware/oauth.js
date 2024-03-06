@@ -1,10 +1,11 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const credentials = require('./credentials.json');
 
 passport.use(new GoogleStrategy({
-    clientID: process.env.CLIENT_ID,
+    clientID: credentials.clientID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'https://recipe-api-ma9i.onrender.com/auth/google/callback',
+    callbackURL: credentials.callbackURL,
   },
   (accessToken, refreshToken, profile, done) => {
     // Store user information or perform custom logic here

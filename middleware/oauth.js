@@ -25,11 +25,12 @@ passport.deserializeUser((obj, done) => {
 
 // Middleware to check if the user is authenticated
 passport.isAuthenticated = (req, res, next) => {
-  console.log('in isAuthenticated')
   if (req.isAuthenticated()) {
+    console.log('in isAuthenticated if statement')
     return next();
   }
   // Redirect to login or handle unauthorized access as needed
+  console.log('in isAuthenticated failed if statement')
   res.redirect('/auth/google');
 };
 

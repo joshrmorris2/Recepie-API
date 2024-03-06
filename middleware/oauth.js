@@ -9,6 +9,7 @@ passport.use(new GoogleStrategy({
   },
   (accessToken, refreshToken, profile, done) => {
     // Store user information or perform custom logic here
+    console.log(profile, accessToken, refreshToken, done)
     return done(null, profile);
   }
 ));

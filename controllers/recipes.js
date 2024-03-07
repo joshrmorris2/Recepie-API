@@ -44,6 +44,7 @@ const create = async (req, res, next) => {
         cuisine: req.body.cuisine,
         chef: req.body.chef,
         creation: req.body.creation,
+        locked: req.body.locked,
     };
     const response = await mongodb.getDb().db().collection('recipes').insertOne(recipe);
     if (response.acknowledged) {
@@ -68,6 +69,7 @@ const update = async (req, res, next) => {
                 cuisine: req.body.cuisine,
                 chef: req.body.chef,
                 creation: req.body.creation,
+                locked: req.body.locked,
             },
         });
         if(response.modifiedCount > 0) {

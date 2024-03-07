@@ -7,7 +7,8 @@ const saveRecipe = (req, res, next) => {
         directions: 'required|string',
         cuisine: 'string',
         chef: 'string',
-        creation: 'string'
+        creation: 'string',
+        locked: 'boolean'
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {

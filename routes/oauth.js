@@ -20,8 +20,12 @@ router.get('/google/callback',
 
 // Logout route
 router.get('/logout', (req, res) => {
-  req.logout(); // Passport function to clear user session
-  res.redirect('/'); // Redirect to the home page or any desired page
+  req.logout((err) => {
+    if (err) {
+      console.error('Error during logout:', err);
+    }
+    res.redirect('/'); // Redirect to the home page or any desired page
+  }); // Passport function to clear user session
 });
 
 module.exports = router;

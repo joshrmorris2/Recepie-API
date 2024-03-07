@@ -9,7 +9,7 @@
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
-    "/auth/auth/google": {
+    "/auth/google": {
       "get": {
         "description": "",
         "responses": {
@@ -19,7 +19,17 @@
         }
       }
     },
-    "/auth/auth/google/callback": {
+    "/auth/google/callback": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/logout": {
       "get": {
         "description": "",
         "responses": {

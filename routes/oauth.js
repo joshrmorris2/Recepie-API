@@ -18,4 +18,10 @@ router.get('/google/callback',
   }
 );
 
+// Logout route
+router.get('/logout', (req, res) => {
+  req.logout(); // Passport function to clear user session
+  res.redirect('/'); // Redirect to the home page or any desired page
+});
+
 module.exports = router;

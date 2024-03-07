@@ -78,6 +78,9 @@
                 },
                 "creation": {
                   "example": "any"
+                },
+                "locked": {
+                  "example": "any"
                 }
               }
             }
@@ -148,6 +151,9 @@
                   "example": "any"
                 },
                 "creation": {
+                  "example": "any"
+                },
+                "locked": {
                   "example": "any"
                 }
               }
